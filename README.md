@@ -1,1 +1,6 @@
-# trabalho-final
+- DB
+    - No terminal do Postgre, executar os comandos no arquivo **trabalho-final/Script SQL**
+- Backend
+    - Após a clonagem do repositório, dentro da pasta trabalho-final/backend, rode, no terminal o comando ```npm install``` para baixar todas as dependências do backend
+    - Para iniciar o serviço do backend, execute o comando ```npm run dev```
+- Frontend
