@@ -2,7 +2,7 @@ CREATE DATABASE hackathon_db;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR UNIQUE(255),
     login VARCHAR(255),
     password VARCHAR(255)
 );
