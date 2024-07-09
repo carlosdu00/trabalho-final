@@ -37,4 +37,4 @@ const validateReview = [
     },
 ];
 
-export { validateUser };
+export { validateUser, validateTeam, validateReview };
