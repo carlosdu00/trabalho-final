@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const roboto = Roboto({ subsets: ["latin"], weight: "400" });
@@ -14,8 +15,25 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white py-4">
       <div className="container mx-auto">
-        {/* Conteúdo do cabeçalho */}
-        Meu Cabeçalho
+        <nav className="flex justify-between items-center">
+          <div className="flex gap-5 items-center">
+            <Link
+              className="text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+              href="/"
+            >
+              Página Inicial
+            </Link>
+            <Link
+              className="text-white hover:text-gray-300 transition-colors duration-300 cursor-pointer"
+              href="/newUser"
+            >
+              Cadastrar Usuário
+            </Link>
+          </div>
+          <div>
+            <Link href="/logout">Logout</Link>
+          </div>
+        </nav>
       </div>
     </header>
   );
@@ -24,11 +42,8 @@ const Header = () => {
 // Componente de rodapé
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-4">
-      <div className="container mx-auto">
-        {/* Conteúdo do rodapé */}
-        Meu Rodapé
-      </div>
+    <footer className="bg-gray-800 text-white py-4 fixed bottom-0 w-full">
+      <div className="container mx-auto text-center">Carlos Schumacher</div>
     </footer>
   );
 };
@@ -42,8 +57,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        {children}
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
